@@ -1,0 +1,26 @@
+{
+    "projects": [ 
+         {
+            "title": "E-commerce website",
+            "image": "images/Ecom.png",
+            "description": "This website is an e-commerce where different items are sold.",
+            "github": "https://github.com/sabaFitwi/react-project-ecom-store.git",
+            "live_demo": "https://ca-react-project-ecom.netlify.app"
+        },
+        {
+            "title": "Auction website",
+            "image": "images/Auction.png",
+            "description": "This website is an auction where different bids are sold.",
+            "github": "https://github.com/sabaFitwi/Project_Exam3.git",
+            "live_demo": "https://lovely-lebkuchen-1efdca.netlify.app/"
+        },
+        {
+            "title": "Accommodation website",
+            "image": "images/holidaze.png",
+            "description": "This website is an Accommodation where different venues are hosted and booked.",
+            "github": "https://github.com/sabaFitwi/holidaze.git",
+            "live_demo": "https://holidaze-saba-fitwi.netlify.app/"
+        }
+      
+    ]
+}
