@@ -1,7 +1,5 @@
 # Portfolio - My personal project
 
-- **Start Date:** 30.05.2022
-
 ## Brief
 
 This is a personal project to create a working professional portfolio website to attract future job opportunities
@@ -36,9 +34,3 @@ This is a personal project to create a working professional portfolio website to
 ![GitHub Pages Badge](https://img.shields.io/badge/GitHub%20Pages-222?logo=githubpages&logoColor=fff&style=for-the-badge)
 ![Figma](https://img.shields.io/badge/Figma-red?style=for-the-badge&logo=figma&logoColor=white)
 ![Trello](https://img.shields.io/badge/Trello-blue?style=for-the-badge&logo=trello&logoColor=white)
-
-## To do list:
-
-- Adding more projects
-- Adding my CV
--
