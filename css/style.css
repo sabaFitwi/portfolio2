@@ -118,8 +118,8 @@ button:hover {
   padding-right: 30px;
 }
 section {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 .text {
   font-size: 15px;
@@ -315,46 +315,36 @@ h1.header-wrapper {
   height: 250px;
   display: block;
 }
-/* .about .wrapper.one {
-  margin-bottom: 64px;
-} */
+
  h2 {
   padding: 0;
   font-size: 30px;
   font-weight: 600;
   font-family: var(--largeFont);
 }
-/* .about .column-right .text {
-  padding: 0;
-} */
+.about .column-right {
+  padding: 10px 20px;
+}
 .web-tools-container {
   background: var(--whiteSmoke);
-  padding-top: 64px;
-  padding-bottom: 64px;
+  padding:24px;
   text-align: center;
 }
-/* .about .row.two .item {
-  padding: 22px;
-  margin: 0.8px 0;
-} */
- span {
-  font-size: 32px;
-}
+
+
 h3 {
   text-transform: uppercase;
   font-weight: 400;
   font-size: 16px;
 }
-/* .text {
-  width: 60%;
-  margin: 0 auto;
-} */
+
 
 .item {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  padding: 10px;
 }
  span.web-icon-text {
   font-size: 12px;
