@@ -1,5 +1,5 @@
 // Fetch the badges.json file
-fetch('badges.json')
+fetch('json/badges.json')
     .then(response => response.json())
     .then(data => {
        

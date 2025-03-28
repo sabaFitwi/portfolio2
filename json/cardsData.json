@@ -1,0 +1,54 @@
+{
+  "projects": [
+    {
+      "title": "E-commerce website",
+      "image": "images/Ecom.png",
+      "description": "This website is an e-commerce where different items are sold.",
+      "github": "https://github.com/sabaFitwi/react-project-ecom-store.git",
+      "live_demo": "https://ca-react-project-ecom.netlify.app"
+    },
+    {
+      "title": "Auction website",
+      "image": "images/Auction.png",
+      "description": "This website is an auction where different bids are sold.",
+      "github": "https://github.com/sabaFitwi/Project_Exam3.git",
+      "live_demo": "https://lovely-lebkuchen-1efdca.netlify.app/"
+    },
+    {
+      "title": "Accommodation website",
+      "image": "images/holidaze.png",
+      "description": "This website is an Accommodation where different venues are hosted and booked.",
+      "github": "https://github.com/sabaFitwi/holidaze.git",
+      "live_demo": "https://holidaze-saba-fitwi.netlify.app/"
+    },
+    {
+      "title": "Blog website",
+      "image": "images/blog_image.PNG",
+      "description": "This website is a blog where different interior designs of a house are posted.",
+      "github": "https://github.com/Noroff-FEU-Assignments/project-exam-1-sabaFitwi.git",
+      "live_demo": "https://interior-design-blog.netlify.app/"
+    },
+    {
+      "title": "Rainy Days website",
+      "image": "images/rainyDays.PNG",
+      "description": "Rainy Days an online e-commerce website, which sales jacket for out door activities.",
+      "github": "https://github.com/sabaFitwi/cms-design-cross.course-project.git",
+      "live_demo": "https://heroic-buttercream-d46cf0.netlify.app"
+    },
+    {
+      "title": "Community Science Museum website",
+      "image": "images/com-museum.PNG",
+      "description": "This website is an informative and appealing, that will attract both middle school pupils and their parents.",
+      "github": "https://github.com/sabaFitwi/19-12-21_Semester-project1_saba-fitwi.git",
+      "live_demo": "https://nifty-mcnulty-9df360.netlify.app/"
+    },
+    {
+      "title": "Full stack E-commerce website",
+      "image": "images/Ecom.png",
+
+      "description": " A Real-Time Full Stack E-Commerce Application built with the latest Next.js 15.",
+      "github": "https://github.com/sabaFitwi/ecommerce-app-saba/tree/master",
+      "live_demo": "https://ecommerce-app-saba.vercel.app/orders"
+    }
+  ]
+}
