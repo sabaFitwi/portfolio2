@@ -43,12 +43,12 @@
       "live_demo": "https://nifty-mcnulty-9df360.netlify.app/"
     },
     {
-      "title": "Full stack E-commerce website",
-      "image": "images/Ecom.png",
+      "title": "Full stack Learning Management System website",
+      "image": "images/Lms.png",
 
-      "description": " A Real-Time Full Stack E-Commerce Application built with the latest Next.js 15.",
-      "github": "https://github.com/sabaFitwi/ecommerce-app-saba/tree/master",
-      "live_demo": "https://ecommerce-app-saba.vercel.app/orders"
+      "description": " Professional LMS (Learning Management System) Platform from scratch with Next.js 15  with sanity content management CMS",
+      "github": "https://github.com/sabaFitwi/lms-app-saba-samuel.git",
+      "live_demo": "https://lms-app-saba-samuel.vercel.app/"
     }
   ]
 }
