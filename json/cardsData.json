@@ -51,12 +51,12 @@
       "live_demo": "https://ecommerce-app-saba.vercel.app/orders"
     },
     {
-      "title": "Full stack Learning Management System website",
+      "title": " Cloud storage app from scratch",
       "image": "images/Lms.png",
 
-      "description": " Professional LMS (Learning Management System) Platform from scratch with Next.js 15  with sanity content management CMS",
-      "github": "https://github.com/sabaFitwi/lms-app-saba-samuel.git",
-      "live_demo": "https://lms-app-saba-samuel.vercel.app/"
+      "description": "Built with Next.js 15, React, TypeScript, Clerk (auth), Firebase (storage), ShadCN UI, and drag & drop file management with full CRUD functionality.",
+      "github": "https://github.com/sabaFitwi/dropbox-clone.git",
+      "live_demo": "https://dropbox-clone-mocha.vercel.app/"
     }
   ]
 }
