@@ -65,11 +65,11 @@
       "tech": "Next.js, React, TypeScript, Clerk, Firebase, shadcn/ui, Tailwind CSS"
     },
     {
-      "title": "Full stack E-commerce website",
-      "image": "images/ecom-nextJs.png",
-      "description": "Real-time full‑stack e‑commerce built with Next.js 15: product catalog, cart, orders, and admin tools.",
-      "github": "https://github.com/sabaFitwi/ecommerce-app-saba/tree/master",
-      "live_demo": "https://ecommerce-app-saba.vercel.app/orders",
+      "title": " LMS with Admin Dashboard",
+      "image": "images/Lms.png",
+      "description": "Learning management system with course catalog, enrollment, progress tracking, and admin tools with sanity backend.",
+      "github": "https://github.com/sabaFitwi/lms-app-saba-samuel",
+      "live_demo": "https://lms-app-saba-samuel.vercel.app/",
       "tech": "Next.js, React, TypeScript, sanity, Stripe, clerk, Tailwind CSS"
     }
   ]
