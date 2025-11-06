@@ -3,60 +3,74 @@
     {
       "title": "E-commerce website",
       "image": "images/Ecom.png",
-      "description": "This website is an e-commerce where different items are sold.",
+      "description": "Responsive storefront with product browsing, cart, checkout, and category filtering.",
       "github": "https://github.com/sabaFitwi/react-project-ecom-store.git",
-      "live_demo": "https://ca-react-project-ecom.netlify.app"
+      "live_demo": "https://ca-react-project-ecom.netlify.app",
+      "tech": "React, styled-components, HTML"
     },
     {
       "title": "Auction website",
       "image": "images/Auction.png",
-      "description": "This website is an auction where different bids are sold.",
+      "description": "Bidding marketplace where users browse, list items, and place bids with listing management and bidding history.",
       "github": "https://github.com/sabaFitwi/Project_Exam3.git",
-      "live_demo": "https://lovely-lebkuchen-1efdca.netlify.app/"
+      "live_demo": "https://lovely-lebkuchen-1efdca.netlify.app/",
+      "tech": "HTML, SCSS, Bootstrap, JavaScript"
     },
     {
       "title": "Accommodation website",
       "image": "images/holidaze.png",
-      "description": "This website is an Accommodation where different venues are hosted and booked.",
+      "description": "Booking platform for venues with availability display, host management, and a clear reservation flow.",
       "github": "https://github.com/sabaFitwi/holidaze.git",
-      "live_demo": "https://holidaze-saba-fitwi.netlify.app/"
+      "live_demo": "https://holidaze-saba-fitwi.netlify.app/",
+      "tech": "HTML, Tailwind CSS, React"
     },
     {
       "title": "Blog website",
       "image": "images/blog_image.PNG",
-      "description": "This website is a blog where different interior designs of a house are posted.",
+      "description": "Interior design blog showcasing articles and imagery with a clean, responsive layout.",
       "github": "https://github.com/Noroff-FEU-Assignments/project-exam-1-sabaFitwi.git",
-      "live_demo": "https://interior-design-blog.netlify.app/"
+      "live_demo": "https://interior-design-blog.netlify.app/",
+      "tech": "HTML, CSS, JavaScript, CMS"
     },
     {
       "title": "Rainy Days website",
       "image": "images/rainyDays.PNG",
-      "description": "Rainy Days an online e-commerce website, which sales jacket for out door activities.",
+      "description": "Online store for outdoor jackets featuring product pages, cart, and checkout optimized for mobile.",
       "github": "https://github.com/sabaFitwi/cms-design-cross.course-project.git",
-      "live_demo": "https://heroic-buttercream-d46cf0.netlify.app"
+      "live_demo": "https://heroic-buttercream-d46cf0.netlify.app",
+      "tech": "HTML, CSS"
     },
     {
       "title": "Community Science Museum website",
       "image": "images/com-museum.PNG",
-      "description": "This website is an informative and appealing, that will attract both middle school pupils and their parents.",
+      "description": "Informational site highlighting exhibits, events, and visitor details with accessible, engaging design.",
       "github": "https://github.com/sabaFitwi/19-12-21_Semester-project1_saba-fitwi.git",
-      "live_demo": "https://nifty-mcnulty-9df360.netlify.app/"
+      "live_demo": "https://nifty-mcnulty-9df360.netlify.app/",
+      "tech": "HTML, CSS"
     },
     {
       "title": "Full stack E-commerce website",
       "image": "images/ecom-nextJs.png",
-
-      "description": " A Real-Time Full Stack E-Commerce Application built with the latest Next.js 15.",
+      "description": "Real-time full‑stack e‑commerce built with Next.js 15: product catalog, cart, orders, and admin tools.",
       "github": "https://github.com/sabaFitwi/ecommerce-app-saba/tree/master",
-      "live_demo": "https://ecommerce-app-saba.vercel.app/orders"
+      "live_demo": "https://ecommerce-app-saba.vercel.app/orders",
+      "tech": "Next.js, React, TypeScript, sanity, Stripe, clerk, Tailwind CSS"
     },
     {
-      "title": " Cloud storage app from scratch",
-      "image": "images/Lms.png",
-
-      "description": "Built with Next.js 15, React, TypeScript, Clerk (auth), Firebase (storage), ShadCN UI, and drag & drop file management with full CRUD functionality.",
+      "title": "AI Agent SaaS Platform",
+      "image": "images/dropbox.png",
+      "description": "Cloud storage app with auth, file uploads, previews, folders, drag‑and‑drop, and full CRUD (Next.js 15, React, TypeScript, Clerk, Firebase, shadcn/ui).",
       "github": "https://github.com/sabaFitwi/dropbox-clone.git",
-      "live_demo": "https://dropbox-clone-mocha.vercel.app/"
+      "live_demo": "https://dropbox-clone-mocha.vercel.app/",
+      "tech": "Next.js, React, TypeScript, Clerk, Firebase, shadcn/ui, Tailwind CSS"
+    },
+    {
+      "title": "Full stack E-commerce website",
+      "image": "images/ecom-nextJs.png",
+      "description": "Real-time full‑stack e‑commerce built with Next.js 15: product catalog, cart, orders, and admin tools.",
+      "github": "https://github.com/sabaFitwi/ecommerce-app-saba/tree/master",
+      "live_demo": "https://ecommerce-app-saba.vercel.app/orders",
+      "tech": "Next.js, React, TypeScript, sanity, Stripe, clerk, Tailwind CSS"
     }
   ]
 }

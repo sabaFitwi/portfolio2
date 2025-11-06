@@ -1,6 +1,9 @@
 // Hiding preloader
 window.addEventListener("load", () => {
-  document.querySelector(".preloader").classList.add("hidePreloader");
+  const preloader = document.querySelector(".preloader");
+  if (preloader) {
+    preloader.classList.add("hidePreloader");
+  }
   document.body.style.overflow = "visible";
 });
 const elements = document.querySelectorAll(".scroll-down");
@@ -22,14 +25,16 @@ slideUp();
 // navbar toggle
 const navButton = document.querySelector(".navbar-toggler");
 const navMenu = document.querySelector(".navbar-collapse");
-navButton.addEventListener("click", () => {
-  navMenu.classList.toggle("toggleNav");
-});
-document.querySelectorAll(".nav-link").forEach((link) =>
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("toggleNav");
-  })
-);
+if (navButton && navMenu) {
+  navButton.addEventListener("click", () => {
+    navMenu.classList.toggle("toggleNav");
+  });
+  document.querySelectorAll(".nav-link").forEach((link) =>
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("toggleNav");
+    })
+  );
+}
 
 // stopping transition during resizing
 let transitionStopper;
@@ -49,6 +54,7 @@ window.addEventListener("scroll", () => {
     document.body.scrollTop ||
     0;
   const navbar = document.querySelector(".navbar");
+  if (!navbar) return;
   if (position >= 0) {
     navbar.style.display = "block";
   } else {
@@ -103,7 +109,9 @@ function contactValidation(e) {
   contactForm.reset();
 }
 
-contactForm.addEventListener("submit", contactValidation);
+if (contactForm) {
+  contactForm.addEventListener("submit", contactValidation);
+}
 
 function numberOfCharacters(value, len) {
   if (value.trim().length > len) {
@@ -128,3 +136,14 @@ const checkCharacterType = function checkIfOnlyLetter(field) {
     return false;
   }
 };
+
+// Glitter scroll effect for logo and name
+const glitterElems = document.querySelectorAll('.glitter-scroll');
+function updateGlitterOnScroll() {
+  const p = (window.scrollY / 3) % 200;
+  glitterElems.forEach((el) => {
+    el.style.backgroundPosition = `${p}% 50%`;
+  });
+}
+window.addEventListener('scroll', updateGlitterOnScroll);
+updateGlitterOnScroll();

@@ -11,7 +11,7 @@
   .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
+    grid-gap: 1.5rem;
   }
   .portfolio-grid .item .sub-item h3 {
     font-size: 14px;
@@ -79,7 +79,8 @@
     gap: 30px;
   }
   .portfolio-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
   }
 
   .contact-wrapper {
