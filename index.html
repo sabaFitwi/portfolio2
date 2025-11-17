@@ -421,5 +421,27 @@
     <script src="scripts/js/tools.js"></script>
     <script src="scripts/js/script.js"></script>
     <script src="scripts/js/contact.js"></script>
+
+    <!-- AI assistant widget (local rule-based assistant that can apply filters) -->
+    <div id="ai-agent-root">
+      <button id="ai-toggle" aria-label="Open assistant">🤖</button>
+      <div id="ai-panel" aria-hidden="true">
+        <header>
+          <strong>Project Assistant</strong>
+          <button id="ai-close" aria-label="Close">✕</button>
+        </header>
+        <div id="ai-messages"></div>
+        <form id="ai-form">
+          <input
+            id="ai-input"
+            placeholder="Ask: e.g. show school projects with React"
+            autocomplete="off"
+          />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="scripts/js/ai-agent.js"></script>
   </body>
 </html>

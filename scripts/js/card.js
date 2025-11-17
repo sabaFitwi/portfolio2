@@ -244,6 +244,44 @@ document.addEventListener("DOMContentLoaded", () => {
         handleScroll();
       }
 
+      // Expose a small API so other UI (like the AI assistant) can apply filters or get projects
+      window.portfolioFilters = {
+        filter: (typeArg, techArg) => {
+          // allow callers to pass null or undefined to keep current behavior
+          const t = typeArg || activeType || "all";
+          // update UI active state for type-cards
+          try {
+            document.querySelectorAll(".type-card").forEach((c) => {
+              if (c.getAttribute("data-type") === t) {
+                c.classList.add("active", "ring-2", "ring-teal-500");
+              } else {
+                c.classList.remove(
+                  "active",
+                  "ring-2",
+                  "ring-teal-500"
+                );
+              }
+            });
+          } catch (e) {}
+          activeType = t;
+          populateTechFilters(activeType);
+          filterProjects(activeType, techArg || null);
+          // return current filtered projects for simple reporting
+          return projects.filter((project) => {
+            const typeMatches =
+              activeType === "all" || project.type === activeType;
+            const techMatches =
+              !techArg ||
+              project.tech
+                .toLowerCase()
+                .includes(techArg.toLowerCase());
+            return typeMatches && techMatches;
+          });
+        },
+        getProjects: () => projects,
+        populateTechs: (t) => populateTechFilters(t || activeType),
+      };
+
       // Initial load - show all projects (type=all, no tech filter)
       filterProjects(activeType, null);
 

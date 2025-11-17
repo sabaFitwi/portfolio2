@@ -1,3 +1,121 @@
+/* AI Assistant Chatbot Styles */
+#ai-agent-root {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  z-index: 9999;
+  font-family: "Inter", Arial, sans-serif;
+}
+#ai-toggle {
+  background: linear-gradient(90deg, #00b5fc 60%, #1e1e1e 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  font-size: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+#ai-toggle:hover {
+  box-shadow: 0 8px 32px rgba(0, 181, 252, 0.18);
+}
+#ai-toggle {
+  background: linear-gradient(90deg, #00b5fc 60%, #1e1e1e 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  font-size: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+  outline: none;
+}
+#ai-toggle:focus {
+  outline: none !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+#ai-toggle:hover {
+  box-shadow: 0 8px 32px rgba(0, 181, 252, 0.18);
+}
+#ai-panel:focus {
+  outline: none !important;
+}
+/* (removed stray block: these properties are already in #ai-panel header) */
+#ai-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+#ai-messages {
+  max-height: 260px;
+  overflow-y: auto;
+  background: #181f25;
+  padding: 1rem 1rem 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.ai-msg {
+  max-width: 85%;
+  padding: 0.6em 1em;
+  border-radius: 1.2em;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 0.2em;
+  word-break: break-word;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+.ai-msg-bot {
+  background: #232c36;
+  color: #e0f7fa;
+  align-self: flex-start;
+}
+.ai-msg-self {
+  background: #00b5fc;
+  color: #fff;
+  align-self: flex-end;
+}
+#ai-form {
+  display: flex;
+  border-top: 1px solid #222b33;
+  background: #181f25;
+  padding: 0.5rem 0.7rem;
+  gap: 0.5rem;
+}
+#ai-input {
+  flex: 1;
+  border: none;
+  background: #232c36;
+  color: #fff;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  font-size: 13px;
+  outline: none;
+}
+#ai-form button[type="submit"] {
+  background: #00b5fc;
+  color: #fff;
+  border: none;
+  border-radius: 1em;
+  padding: 0.5em 1.1em;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#ai-form button[type="submit"]:hover {
+  background: #0090c7;
+}
+.ai-hint {
+  color: #00b5fc;
+  font-size: 12px;
+  font-style: italic;
+}
 /* google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
@@ -448,6 +566,82 @@ img.web-icon {
   color: var(--skyblue);
   border-color: rgba(0, 181, 252, 0.3);
   box-shadow: 0 6px 18px rgba(0, 181, 252, 0.06);
+}
+
+/* AI assistant widget styles */
+#ai-agent-root {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1200;
+  font-family: var(--smallFont);
+}
+#ai-toggle {
+  background: linear-gradient(90deg, #06b6d4, #0ea5a8);
+  color: white;
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.4);
+  font-size: 20px;
+}
+#ai-panel {
+  display: none;
+  width: 320px;
+  max-height: 420px;
+  background: rgba(17, 24, 39, 0.95);
+  color: #fff;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(2, 6, 23, 0.6);
+}
+#ai-panel header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+#ai-messages {
+  padding: 12px;
+  height: 290px;
+  overflow-y: auto;
+}
+.ai-msg {
+  margin-bottom: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+.ai-msg-bot {
+  background: rgba(255, 255, 255, 0.04);
+}
+.ai-msg-self {
+  background: rgba(255, 255, 255, 0.06);
+  text-align: right;
+}
+#ai-form {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.02);
+}
+#ai-form input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: transparent;
+  color: white;
+}
+#ai-form button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(6, 182, 212, 0.9);
+  border: none;
+  color: #042;
+  font-weight: 600;
 }
 
 .card-inner {
