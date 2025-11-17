@@ -4,8 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       console.log(data);
       const portfolioGrid = document.querySelector(".portfolio-grid");
-      const techFiltersContainer = document.querySelector("#tech-filters");
-      const typeFiltersContainer = document.querySelector("#type-filters");
+      const techFiltersContainer =
+        document.querySelector("#tech-filters");
+      const typeFiltersContainer =
+        document.querySelector("#type-filters");
       const projects = data.projects;
 
       // Standardize project types and collect available types
@@ -38,22 +40,31 @@ document.addEventListener("DOMContentLoaded", () => {
         );
         card.setAttribute("data-type", type);
         // Friendly label
-        const label = type === "all" ? "All Projects" : type.charAt(0).toUpperCase() + type.slice(1);
+        const label =
+          type === "all"
+            ? "All Projects"
+            : type.charAt(0).toUpperCase() + type.slice(1);
         card.textContent = label;
         typeFiltersContainer.appendChild(card);
       });
 
+      // Set activeType for combined filtering (must be declared before use)
+      let activeType = "all";
+
       // Mark 'all' as active visually on initial load and populate tech filters
-      const defaultCard = document.querySelector('.type-card[data-type="all"]');
+      const defaultCard = document.querySelector(
+        '.type-card[data-type="all"]'
+      );
       if (defaultCard) {
-        defaultCard.classList.add("active", "ring-2", "ring-teal-500");
+        defaultCard.classList.add(
+          "active",
+          "ring-2",
+          "ring-teal-500"
+        );
       }
 
       // Populate tech filters for the initial active type
       populateTechFilters(activeType);
-
-      // Set activeType for combined filtering
-      let activeType = "all";
 
       // Extract unique technologies (will be populated when a type is selected)
       function populateTechFilters(forType) {
@@ -76,7 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Add a reset 'All Techs' button
         const resetBtn = document.createElement("button");
-        resetBtn.className = "tech-filter px-3 py-1.5 text-sm text-gray-400 border border-gray-700 rounded-md hover:border-teal-500 hover:text-teal-400 transition-all duration-300 active";
+        resetBtn.className =
+          "tech-filter px-3 py-1.5 text-sm text-gray-400 border border-gray-700 rounded-md hover:border-teal-500 hover:text-teal-400 transition-all duration-300 active";
         resetBtn.setAttribute("data-tech", "all");
         resetBtn.textContent = "All Techs";
         techFiltersContainer.appendChild(resetBtn);
@@ -103,25 +115,52 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         // Wire tech filter events
-        document.querySelectorAll(".tech-filter").forEach((button) => {
-          button.addEventListener("click", () => {
-            document.querySelectorAll(".tech-filter").forEach((btn) => {
-              btn.classList.remove("active", "border-teal-500", "text-teal-400", "bg-teal-500/10");
-              btn.classList.add("border-gray-700", "text-gray-400");
-            });
-            button.classList.add("active", "border-teal-500", "text-teal-400", "bg-teal-500/10");
-            button.classList.remove("border-gray-700", "text-gray-400");
+        document
+          .querySelectorAll(".tech-filter")
+          .forEach((button) => {
+            button.addEventListener("click", () => {
+              document
+                .querySelectorAll(".tech-filter")
+                .forEach((btn) => {
+                  btn.classList.remove(
+                    "active",
+                    "border-teal-500",
+                    "text-teal-400",
+                    "bg-teal-500/10"
+                  );
+                  btn.classList.add(
+                    "border-gray-700",
+                    "text-gray-400"
+                  );
+                });
+              button.classList.add(
+                "active",
+                "border-teal-500",
+                "text-teal-400",
+                "bg-teal-500/10"
+              );
+              button.classList.remove(
+                "border-gray-700",
+                "text-gray-400"
+              );
 
-            const selectedTech = button.getAttribute("data-tech");
-            filterProjects(activeType, selectedTech === "all" ? null : selectedTech);
+              const selectedTech = button.getAttribute("data-tech");
+              filterProjects(
+                activeType,
+                selectedTech === "all" ? null : selectedTech
+              );
+            });
           });
-        });
       }
 
       // Type card click handlers
       document.querySelectorAll(".type-card").forEach((card) => {
         card.addEventListener("click", () => {
-          document.querySelectorAll(".type-card").forEach((c) => c.classList.remove("active", "ring-2", "ring-teal-500"));
+          document
+            .querySelectorAll(".type-card")
+            .forEach((c) =>
+              c.classList.remove("active", "ring-2", "ring-teal-500")
+            );
           card.classList.add("active", "ring-2", "ring-teal-500");
           const selectedType = card.getAttribute("data-type");
           activeType = selectedType;
@@ -137,7 +176,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const filteredProjects = projects.filter((project) => {
           const typeMatches = type === "all" || project.type === type;
-          const techMatches = !tech || project.tech.toLowerCase().includes(tech.toLowerCase());
+          const techMatches =
+            !tech ||
+            project.tech.toLowerCase().includes(tech.toLowerCase());
           return typeMatches && techMatches;
         });
 
@@ -203,8 +244,8 @@ document.addEventListener("DOMContentLoaded", () => {
         handleScroll();
       }
 
-  // Initial load - show all projects (type=all, no tech filter)
-  filterProjects(activeType, null);
+      // Initial load - show all projects (type=all, no tech filter)
+      filterProjects(activeType, null);
 
       // Function to check if element is in viewport
       function isInViewport(element) {
