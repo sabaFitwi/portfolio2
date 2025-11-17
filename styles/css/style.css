@@ -434,16 +434,20 @@ img.web-icon {
 .type-card {
   min-width: 120px;
   text-align: center;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   padding: 0.6rem 0.8rem;
   margin: 0.25rem;
 }
 .type-card.active {
-  background: linear-gradient(90deg, rgba(0,181,252,0.12), rgba(0,181,252,0.06));
+  background: linear-gradient(
+    90deg,
+    rgba(0, 181, 252, 0.12),
+    rgba(0, 181, 252, 0.06)
+  );
   color: var(--skyblue);
-  border-color: rgba(0,181,252,0.3);
-  box-shadow: 0 6px 18px rgba(0,181,252,0.06);
+  border-color: rgba(0, 181, 252, 0.3);
+  box-shadow: 0 6px 18px rgba(0, 181, 252, 0.06);
 }
 
 .card-inner {
@@ -586,14 +590,15 @@ img.web-icon {
 /*scroll-down*/
 .scroll-down {
   opacity: 0;
-  transition: opacity 500ms;
+  transition: opacity 220ms ease-in;
 }
 
 .scroll-down.inView {
   opacity: 1;
 }
 .inView.fade-in-bottom {
-  animation: fade-in-bottom 1s ease-in-out;
+  /* base animation for visible items — faster */
+  animation: fade-in-bottom 0.45s ease-out both;
 }
 
 @keyframes fade-in-bottom {
@@ -608,43 +613,17 @@ img.web-icon {
 }
 
 .inView.fade-in-bottom-1 {
-  animation: fade-in-bottom 2s ease-in-out both;
-}
-@keyframes fade-in-bottom-1 {
-  0% {
-    transform: translateY(150px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  /* small stagger so multiple items don't animate exactly the same time */
+  animation: fade-in-bottom 0.38s ease-out both;
+  animation-delay: 0s;
 }
 .inView.fade-in-bottom-2 {
-  animation: fade-in-bottom 2.5s ease-in-out both;
-}
-@keyframes fade-in-bottom-2 {
-  0% {
-    transform: translateY(150px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  animation: fade-in-bottom 0.42s ease-out both;
+  animation-delay: 0.03s;
 }
 .inView.fade-in-bottom-3 {
-  animation: fade-in-bottom 3s ease-in-out both;
-}
-@keyframes fade-in-bottom-3 {
-  0% {
-    transform: translateY(150px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  animation: fade-in-bottom 0.48s ease-out both;
+  animation-delay: 0.06s;
 }
 
 /* contact */
