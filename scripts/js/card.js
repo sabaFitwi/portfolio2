@@ -4,21 +4,84 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       console.log(data);
       const portfolioGrid = document.querySelector(".portfolio-grid");
-      const techFiltersContainer =
-        document.querySelector("#tech-filters");
+      const techFiltersContainer = document.querySelector("#tech-filters");
+      const typeFiltersContainer = document.querySelector("#type-filters");
       const projects = data.projects;
 
-      // Extract unique technologies
-      const allTechs = new Set();
-      projects.forEach((project) => {
-        const techs = project.tech.split(", ");
-        techs.forEach((tech) => allTechs.add(tech.trim()));
+      // Standardize project types and collect available types
+      const availableTypes = new Set();
+      projects.forEach((p) => {
+        // If a project doesn't have a type, default to 'other'
+        if (!p.type) p.type = "other";
+        availableTypes.add(p.type);
       });
 
-      // Create filter buttons
-      Array.from(allTechs)
-        .sort()
-        .forEach((tech) => {
+      // Always provide 'all' in type filters
+      availableTypes.add("all");
+
+      // Create type filter cards (school, ai, personal, all)
+      const typeOrder = ["all", "school", "ai", "personal", "other"];
+      typeOrder.forEach((type) => {
+        if (!availableTypes.has(type)) return;
+        const card = document.createElement("button");
+        card.classList.add(
+          "type-card",
+          "px-4",
+          "py-2",
+          "rounded-lg",
+          "text-sm",
+          "font-medium",
+          "bg-white/5",
+          "text-white",
+          "hover:scale-105",
+          "transition-all"
+        );
+        card.setAttribute("data-type", type);
+        // Friendly label
+        const label = type === "all" ? "All Projects" : type.charAt(0).toUpperCase() + type.slice(1);
+        card.textContent = label;
+        typeFiltersContainer.appendChild(card);
+      });
+
+      // Mark 'all' as active visually on initial load and populate tech filters
+      const defaultCard = document.querySelector('.type-card[data-type="all"]');
+      if (defaultCard) {
+        defaultCard.classList.add("active", "ring-2", "ring-teal-500");
+      }
+
+      // Populate tech filters for the initial active type
+      populateTechFilters(activeType);
+
+      // Set activeType for combined filtering
+      let activeType = "all";
+
+      // Extract unique technologies (will be populated when a type is selected)
+      function populateTechFilters(forType) {
+        techFiltersContainer.innerHTML = "";
+        const techSet = new Set();
+        projects
+          .filter((p) => forType === "all" || p.type === forType)
+          .forEach((project) => {
+            const techs = project.tech.split(",");
+            techs.forEach((tech) => techSet.add(tech.trim()));
+          });
+
+        const allTechs = Array.from(techSet).sort();
+        if (allTechs.length === 0) {
+          techFiltersContainer.classList.add("hidden");
+          return;
+        }
+
+        techFiltersContainer.classList.remove("hidden");
+
+        // Add a reset 'All Techs' button
+        const resetBtn = document.createElement("button");
+        resetBtn.className = "tech-filter px-3 py-1.5 text-sm text-gray-400 border border-gray-700 rounded-md hover:border-teal-500 hover:text-teal-400 transition-all duration-300 active";
+        resetBtn.setAttribute("data-tech", "all");
+        resetBtn.textContent = "All Techs";
+        techFiltersContainer.appendChild(resetBtn);
+
+        allTechs.forEach((tech) => {
           const button = document.createElement("button");
           button.classList.add(
             "tech-filter",
@@ -39,41 +102,44 @@ document.addEventListener("DOMContentLoaded", () => {
           techFiltersContainer.appendChild(button);
         });
 
-      // Add click handlers for filter buttons
-      document.querySelectorAll(".tech-filter").forEach((button) => {
-        button.addEventListener("click", () => {
-          // Update active state
-          document.querySelectorAll(".tech-filter").forEach((btn) => {
-            btn.classList.remove(
-              "active",
-              "border-teal-500",
-              "text-teal-400",
-              "bg-teal-500/10"
-            );
-            btn.classList.add("border-gray-700", "text-gray-400");
-          });
-          button.classList.add(
-            "active",
-            "border-teal-500",
-            "text-teal-400",
-            "bg-teal-500/10"
-          );
-          button.classList.remove("border-gray-700", "text-gray-400");
+        // Wire tech filter events
+        document.querySelectorAll(".tech-filter").forEach((button) => {
+          button.addEventListener("click", () => {
+            document.querySelectorAll(".tech-filter").forEach((btn) => {
+              btn.classList.remove("active", "border-teal-500", "text-teal-400", "bg-teal-500/10");
+              btn.classList.add("border-gray-700", "text-gray-400");
+            });
+            button.classList.add("active", "border-teal-500", "text-teal-400", "bg-teal-500/10");
+            button.classList.remove("border-gray-700", "text-gray-400");
 
-          const selectedTech = button.getAttribute("data-tech");
-          filterProjects(selectedTech);
+            const selectedTech = button.getAttribute("data-tech");
+            filterProjects(activeType, selectedTech === "all" ? null : selectedTech);
+          });
+        });
+      }
+
+      // Type card click handlers
+      document.querySelectorAll(".type-card").forEach((card) => {
+        card.addEventListener("click", () => {
+          document.querySelectorAll(".type-card").forEach((c) => c.classList.remove("active", "ring-2", "ring-teal-500"));
+          card.classList.add("active", "ring-2", "ring-teal-500");
+          const selectedType = card.getAttribute("data-type");
+          activeType = selectedType;
+          // Populate tech filters for this type
+          populateTechFilters(activeType);
+          // Reset tech active state by showing all techs
+          filterProjects(activeType, null);
         });
       });
 
-      function filterProjects(tech) {
+      function filterProjects(type, tech) {
         portfolioGrid.innerHTML = ""; // Clear current projects
 
-        const filteredProjects =
-          tech === "all"
-            ? projects
-            : projects.filter((project) =>
-                project.tech.includes(tech)
-              );
+        const filteredProjects = projects.filter((project) => {
+          const typeMatches = type === "all" || project.type === type;
+          const techMatches = !tech || project.tech.toLowerCase().includes(tech.toLowerCase());
+          return typeMatches && techMatches;
+        });
 
         filteredProjects.forEach((project, index) => {
           const item = document.createElement("div");
@@ -137,8 +203,8 @@ document.addEventListener("DOMContentLoaded", () => {
         handleScroll();
       }
 
-      // Initial load - show all projects
-      filterProjects("all");
+  // Initial load - show all projects (type=all, no tech filter)
+  filterProjects(activeType, null);
 
       // Function to check if element is in viewport
       function isInViewport(element) {

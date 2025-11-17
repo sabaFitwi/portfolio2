@@ -250,18 +250,13 @@
             class="w-24 h-1 gradient-bg mx-auto rounded-full mb-8"
           ></div>
 
-          <div class="flex flex-wrap justify-center gap-4 mb-8">
-            <button
-              data-tech="all"
-              class="tech-filter active px-4 py-2 gradient-bg text-white rounded-full font-medium hover:bg-teal-600 transition-all"
-            >
-              All Projects
-            </button>
-            <div
-              id="tech-filters"
-              class="flex flex-wrap justify-center gap-4"
-            >
-              <!-- Dynamic tech filters will be added here -->
+          <div class="flex flex-col items-center mb-8 w-full">
+            <div id="type-filters" class="flex flex-wrap justify-center gap-6 mb-4 w-full">
+              <!-- Dynamic type filter cards will be added here (School / AI / Personal / All) -->
+            </div>
+
+            <div id="tech-filters" class="flex flex-wrap justify-center gap-4 hidden w-full">
+              <!-- Dynamic tech filters will be added here; shown after selecting a type -->
             </div>
           </div>
         </div>

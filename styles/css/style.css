@@ -430,6 +430,22 @@ img.web-icon {
   transition: all 0.3s ease;
 }
 
+/* Type card styles (School / AI / Personal / All) */
+.type-card {
+  min-width: 120px;
+  text-align: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 0.6rem 0.8rem;
+  margin: 0.25rem;
+}
+.type-card.active {
+  background: linear-gradient(90deg, rgba(0,181,252,0.12), rgba(0,181,252,0.06));
+  color: var(--skyblue);
+  border-color: rgba(0,181,252,0.3);
+  box-shadow: 0 6px 18px rgba(0,181,252,0.06);
+}
+
 .card-inner {
   position: relative;
   width: 100%;
